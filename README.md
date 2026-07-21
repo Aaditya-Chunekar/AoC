@@ -1,4 +1,4 @@
-AoC2025
+# AoC
 ___
 My solutions to AoC2025
 
@@ -9,3 +9,7 @@ My solutions to AoC2025
 5. 
 6. 
 7. `*`
+
+My Solutions to AoC2024
+
+1. `*` 
