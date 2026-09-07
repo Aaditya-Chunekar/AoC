@@ -18,17 +18,30 @@ int main() {
         std::stringstream ss(line);
         char c;
         
-        int x=0,y=0;
-        
+        int x=0,y=0,rx=x,ry=y;
+        bool santa=false;
         mp[{x,y}]++;
         // Parse each number separated by whitespace from the current line
         while (ss >> c) {
-            if(c=='^')y++;
-            else if(c=='v')y--;
-            else if(c=='>')x++;
-            else if(c=='<')x--;
-            if(!mp[{x,y}])
-                {mp[{x,y}]++;ans++;}
+            if(santa)
+            {
+                if(c=='^')y++;
+                else if(c=='v')y--;
+                else if(c=='>')x++;
+                else if(c=='<')x--;
+                if(!mp[{x,y}])
+                    {mp[{x,y}]++;ans++;}
+            }
+            else
+            {
+                if(c=='^')ry++;
+                else if(c=='v')ry--;
+                else if(c=='>')rx++;
+                else if(c=='<')rx--;
+                if(!mp[{rx,ry}])
+                    {mp[{rx,ry}]++;ans++;}
+            }
+            santa=!santa;
         }
     }
 
